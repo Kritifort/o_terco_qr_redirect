@@ -29,7 +29,7 @@
         } else if (os === "iOS") {
             window.location.href = fallbackUrl;
         } else {
-            window.location.href = fallbackUrl;
+            window.location.href = androidUrl;
         }
     </script>
 </head>
@@ -39,9 +39,9 @@
         // Atualiza o link de fallback na página
         const link = document.getElementById('link');
         if (os === "Android") {
-            link.href = androidUrl;
+            link.href = fallbackUrl;
         } else if (os === "iOS") {
-            link.href = iosUrl;
+            link.href = fallbackUrl;
         } else {
             link.href = fallbackUrl;
         }
