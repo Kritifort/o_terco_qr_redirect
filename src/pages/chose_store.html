@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Acesse o App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,25 +20,29 @@
             align-items: center;
             justify-content: center;
             gap: 20px;
-            height: 100%;
-            width: 100%;
-            padding: 20px;
+            height: 100vh;
+            width: 100vw;
+            padding: 16px;
+            box-sizing: border-box;
         }
 
         .logo {
-            max-width: 200px;
-            margin-top: 40px;
+            max-width: 160px;
+            margin-top: 24px;
+            width: 100%;
+            height: auto;
         }
 
         .buttons {
             display: flex;
-            gap: 24px;
+            gap: 16px;
             flex-wrap: wrap;
             justify-content: center;
+            width: 100%;
         }
 
         .store-button {
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s;
             width: 200px;
             height: 70px;
             padding: 0;
@@ -53,18 +58,53 @@
             transform: scale(1.1);
         }
 
+        .store-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
         .text {
             color: #fff;
-            font-size: 18px;
-            margin-top: 20px;
+            font-size: 16px;
+            margin-top: 16px;
         }
 
         .em-breve {
             color: #fff;
-            font-size: 16px;
-            margin-top: 8px;
+            font-size: 14px;
+            margin-top: 6px;
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                gap: 12px;
+                padding: 8px;
+            }
+
+            .logo {
+                max-width: 120px;
+                margin-top: 12px;
+            }
+
+            .buttons {
+                gap: 10px;
+            }
+
+            .store-button {
+                width: 110px;
+                height: 38px;
+                font-size: 13px;
+            }
+
+            .text {
+                font-size: 14px;
+            }
+
+            .em-breve {
+                font-size: 12px;
+            }
         }
     </style>
     <script>
