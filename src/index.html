@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecionando...</title>
+    <script>
+        // URLs para cada plataforma
+        const androidUrl = "https://play.google.com/store/apps/details?id=com.kritifort.ar.oterco";
+        const iosUrl = "https://play.google.com/store/apps/details?id=com.kritifort.ar.oterco";
+        const fallbackUrl = "pages/chose_store.html";
+
+        // Detecta o sistema operacional
+        function getMobileOperatingSystem() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "iOS";
+            }
+            return "Other";
+        }
+
+        // Faz o redirecionamento
+        const os = getMobileOperatingSystem();
+        if (os === "Android") {
+            window.location.href = androidUrl;
+        } else if (os === "iOS") {
+            window.location.href = fallbackUrl;
+        } else {
+            window.location.href = fallbackUrl;
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecionando... Se nada acontecer, <a id="link" href="#">clique aqui</a>.</p>
+    <script>
+        // Atualiza o link de fallback na página
+        const link = document.getElementById('link');
+        if (os === "Android") {
+            link.href = androidUrl;
+        } else if (os === "iOS") {
+            link.href = iosUrl;
+        } else {
+            link.href = fallbackUrl;
+        }
+    </script>
+</body>
+</html>
