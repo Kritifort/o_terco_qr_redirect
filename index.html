@@ -25,7 +25,7 @@
         // Faz o redirecionamento
         const os = getMobileOperatingSystem();
         if (os === "Android") {
-            window.location.href = androidUrl;
+            window.location.href = fallbackUrl;
         } else if (os === "iOS") {
             window.location.href = fallbackUrl;
         } else {
